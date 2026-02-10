@@ -45,8 +45,8 @@ def first_play():
     com_result = sum(com_cards)
 
     print(f"User cards : {user_cards}")
-    print(f"Com first cards : {com_cards[0]}")
     print(f"User total: {user_result}")
+    print(f"Com first cards : {com_cards[0]}")
 
     # cek apakah user atau com punya blackjack
     if two_cards_player_1 == cards["10"] and two_cards_player_2 == cards["Ace"]:
@@ -105,8 +105,9 @@ def main_lagi():
                         com_cards.append(com_add_card)
                     for com in com_cards:
                         com_result = sum(com_cards)
-                        if  com_result < 17:
-                            com_draw_another_card()
+                        if user_result >= com_result:
+                            if  com_result < 17:
+                                com_draw_another_card()
                     user_result = sum(user_cards)
                     print(f"Your final card {user_cards} = {user_result}")
                     print(f"Com final card {com_cards} = {com_result}")
