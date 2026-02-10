@@ -1,6 +1,5 @@
 import random, art
 
-# cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 cards = {
     "Ace":11,
     "2":2,
