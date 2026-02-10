@@ -78,7 +78,10 @@ def main_lagi():
                 add_card = random.choice(list(cards.values()))
                 if draw_another_card == "y":
                     if add_card == cards["Ace"]: # jika card random adalah Ace
-                        add_card = 1
+                        if user_result < 11:
+                            add_card = 11
+                        else :
+                            add_card = 1
                     user_cards.append(add_card)
 
 
@@ -95,7 +98,10 @@ def main_lagi():
                     def com_draw_another_card():
                         com_add_card = random.choice(list(cards.values()))
                         if com_add_card == cards["Ace"]:
-                            com_add_card = 1
+                            if user_result < 11:
+                                com_add_card = 11
+                            else:
+                                com_add_card = 1
                         com_cards.append(com_add_card)
                     for com in com_cards:
                         com_result = sum(com_cards)
