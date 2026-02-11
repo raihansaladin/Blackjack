@@ -97,7 +97,7 @@ def main_lagi():
                     def com_draw_another_card():
                         com_add_card = random.choice(list(cards.values()))
                         if com_add_card == cards["Ace"]:
-                            if user_result < 11:
+                            if com_result < 11:
                                 com_add_card = 11
                             else:
                                 com_add_card = 1
@@ -105,12 +105,18 @@ def main_lagi():
                     for com in com_cards:
                         com_result = sum(com_cards)
                         if user_result >= com_result:
-                            if  com_result < 17:
+                            if com_result < 17:
                                 com_draw_another_card()
-                    user_result = sum(user_cards)
-                    print(f"Your final card {user_cards} = {user_result}")
-                    print(f"Com final card {com_cards} = {com_result}")
-                    messi = False
+                    if com_cards[0] > user_result:
+                        user_result = sum(user_cards)
+                        print(f"Your final card {user_cards} = {user_result}")
+                        print(f"Com final card [{com_cards[0]}] = {com_cards[0]}")
+                        messi = False
+                    else:
+                        user_result = sum(user_cards)
+                        print(f"Your final card {user_cards} = {user_result}")
+                        print(f"Com final card {com_cards} = {com_result}")
+                        messi = False
 
             # apakah nilai kartu user lebih dari 21?
             if user_result > 21:
